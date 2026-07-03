@@ -140,6 +140,14 @@ dnf install -y autoconf automake libtool m4
 - Check the service is running: `systemctl status nagios`
 - Access the web UI at `http://<server-ip>/nagios` and log in with the `nagiosadmin` credentials from step 5
 
+# TO See the  nagios
+
+- Simple youramazon ip nagios  like this : http://3.235.9.167/nagios/
+- like this
+- Enter Username and password you give
+- here i give username as : nagiosadmin
+- 
+
 
 
 
