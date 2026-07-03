@@ -82,19 +82,16 @@ cd nagios-plugins-release-2.4.12
 make
 make install
 ```
+# You will get Error like this :
+./tools/setup: line 30: aclocal: command not found
+./tools/setup: line 32: autoheader: command not found
+./tools/setup: line 33: automake: command not found
+./tools/setup: line 34: autoconf: command not found
+bash: ./configure: No such file or directory
+make: *** No targets specified and no makefile found.  Stop.
+make: *** No rule to make target 'install'.  Stop.
 
-### 7. Enable and start Nagios
-
-```bash
-systemctl enable nagios
-/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
-systemctl start nagios
-systemctl restart httpd
-```
-
-The `-v` command verifies the config file before starting the service — fix any reported errors before moving on.
-
-## Troubleshooting
+# then use this 
 
 ### `./tools/setup` fails with `aclocal`, `autoheader`, `automake`, `autoconf`: command not found
 
@@ -109,6 +106,21 @@ cd ~/downloads/nagios-plugins-release-2.4.12
 make
 make install
 ```
+
+
+### 7. Enable and start Nagios
+
+```bash
+systemctl enable nagios
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+systemctl start nagios
+systemctl restart httpd
+```
+
+The `-v` command verifies the config file before starting the service — fix any reported errors before moving on.
+
+## Troubleshooting
+
 
 ### `autoconf`/`automake`/`libtool`/`m4` not found by `dnf`
 
